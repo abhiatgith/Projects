@@ -2,6 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
+import usermgmt.UserManagementDBOperations as dbmgmt
 
 from Job import Job
 
@@ -36,6 +37,7 @@ def get_jobs(page_url):
             job_skills = job.find('p', {'class': 'descrip-skills'}).text.strip().replace('\n', '')\
                 .replace(' ', '').replace('Skills:','')
 
+  #         if job_skills.lower().__contains__('datascience') or job_skills.lower().__contains__('machinelearning'):
             # Create an object of type job
             job_obj = Job(job_title, job_company, job_place, job_exp, job_pac, job_desc, job_skills)
             # append each job to the list as an object of the class job
@@ -53,14 +55,23 @@ def get_jobs(page_url):
         except:
             print('Error on ' + str(page_number)  + ': ' + page_url)
 
-
-#def insertDataInDB(data, dbName, collectionName):
-#    client = MongoClient()
-#    db = client[dbName]
-#    collections = db.collectionName
-#    result = collections.insert_one(data)
-#    return result
-
+def insertDataInDB(data, dbName, collectionName):
+    # client = MongoClient()
+    # db = client[dbName]
+    # collections = db.collectionName
+    # result = collections.insert_one(data)
+    # return result
+    db_ob1 = dbmgmt.DBUserManagement("mongodb://localhost:27017/")
+    if db_ob1.checfIfDBExists(dbName) != True:
+        db = db_ob1.createDatabse(dbName)
+    else:
+        db = db_ob1.myclient[dbName]
+    if db_ob1.checkIfCollectionExist(db,collectionName) != True:
+        collections = db_ob1.createCollection(db,collectionName)
+    else:
+        collections = db[collectionName]
+    result = collections.insert_one(data)
+    return result
 
 #def getDataByuserId( dbName, collectionName):
 #    client = MongoClient()
@@ -93,7 +104,7 @@ lstJobs = []
 #databaseObj = DataAcccess('ReviewDB', 'ScrapperCollection')
 
 try:
-    while nextpageUrl != '' or  page_number1 == '10':
+    while nextpageUrl != '':
         try:
             print('Current page  : ' + nextpageUrl)
             # calls the function that finds the jobs for each page and keeps appending the jobs in each URL to the lstJobs list
@@ -128,7 +139,7 @@ except:
 dict_list = []
 
 for r in lstJobs:
-    #insertDataInDB(json_default_format(r), 'ReviewScraperDB', 'scraperCollection')
+    insertDataInDB(json_default_format(r), 'JobScraperDB', 'scraperCollection')
     dict_list.append(json_default_format(r))
 
 #print('*' * 100)
