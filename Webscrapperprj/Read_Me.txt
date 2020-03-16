@@ -1,3 +1,7 @@
+Project details:
+
+- Scrap IT Jobs from the "https://www.monsterindia.com" website and store them in an MongoDB database.
+
 a) naukriscrapper.py does the following:
 
 1) Execution starts at line 96 - websiteUrl = "https://www.monsterindia.com"
