@@ -3,8 +3,8 @@
 # Should be flexible enough to choose the number of entries
 
 # Take input from end user
-from stdtchrmgmt.classdefs import Student, Teacher
-from stdtchrmgmt.classfileops import Fileops
+from classdefs import Student, Teacher
+from classfileops import Fileops
 
 if __name__ == "__main__":
     print("Student/teacher management system")
