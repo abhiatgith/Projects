@@ -2,7 +2,7 @@ Project details:
 
 - Scrap IT Jobs from the "https://www.monsterindia.com" website and store them in an MongoDB database.
 
-a) naukriscrapper.py does the following:
+a) scrappermain.py does the following:
 
 1) Execution starts at line 96 - websiteUrl = "https://www.monsterindia.com"
 2) Initialize 'nextpageUrl' variable to "https://www.monsterindia.com/search/it-computers-software-jobs?searchId=5252de8a-b778-4c92-b8f2-672b31de3db6". This URL lists all the IT Computer software jobs on the monster portal.
@@ -16,7 +16,7 @@ a) naukriscrapper.py does the following:
 'Job Description'
 'Job Skills Required'
 
-4) Now, find the tag with the class on the above URL which has the link for the 'next' page and again call the'get_jobs' function and pass the 'next' page URL/link that you got now to scrap all the jobs from this page. Continue this process for the first 10 pages and then break the loop.
+4) Now, find the html tag with the class on the above URL which has the link for the 'next' page and again call the'get_jobs' function and pass the 'next' page URL/link that you got now to scrap all the jobs from this page. Continue this process for the first 10 pages and then break the loop.
 
 5) For each item in 'lstJobs' list, create a JSON format object by calling the 'json_default_format' fucntion and store the result in a dictionary.
 
@@ -26,6 +26,4 @@ For each item in the lstJobs list, create an entry in the 'scraperCollection' co
 
 The  'insertDataInDB' function first creates a connection object to the Mongodb, then checks if the database and collection are already existing and creates them if required after which the data is inserted as a JSON object into the collection.
 
-
-
-6) Also pass the dictionary to json.dumps function to print the JSON file as output.
+6) Also, pass the dictionary to json.dumps function to print the JSON file as output.

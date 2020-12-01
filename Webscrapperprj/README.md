@@ -1,8 +1,8 @@
 # Project details:
 
-- Scrap IT Jobs from the "https://www.monsterindia.com" website and store them in an MongoDB database.
+- Scrap first 10 pages of the IT Jobs listed on "https://www.monsterindia.com" website and store them in a MongoDB database.
 
-a) naukriscrapper.py does the following:
+a) scrappermain.py does the following:
 
 1) Execution starts at line 96 - websiteUrl = "https://www.monsterindia.com"
 2) Initialize 'nextpageUrl' variable to "https://www.monsterindia.com/search/it-computers-software-jobs?searchId=5252de8a-b778-4c92-b8f2-672b31de3db6". This URL lists all the IT Computer software jobs on the monster portal.
@@ -25,7 +25,5 @@ a) naukriscrapper.py does the following:
 For each item in the lstJobs list, create an entry in the 'scraperCollection' collection of the 'JobScraperDB' Mongo DB by calling the 'insertDataInDB' function and passing the DB, collection name and the JSON format of each entry in the lstJobs list.
 
 The  'insertDataInDB' function first creates a connection object to the Mongodb, then checks if the database and collection are already existing and creates them if required after which the data is inserted as a JSON object into the collection.
-
-
 
 6) Also pass the dictionary to json.dumps function to print the JSON file as output.
