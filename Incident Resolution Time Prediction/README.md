@@ -16,14 +16,14 @@ Note: Because of the specific format that the dataset has been provided in, the 
 5) After a few seconds, you will be prompted to download the file named 'prediction' which you can save to your system.
 6) If you open the downloaded file, you can see the prediction for the time to resolve the incident under the 'Resolution_Time' column. The prediction categories are as follows:
 
-Within 6 hours
-Within 24 hours
-24 - 48 hours
-2 to 7 days
-1 - 2 weeks
-2 weeks - 1 month
-1 - 2 months
-2 - 3 months
+* Within 6 hours
+* Within 24 hours
+* 24 - 48 hours
+* 2 to 7 days
+* 1 - 2 weeks
+* 2 weeks - 1 month
+* 1 - 2 months
+* 2 - 3 months
 
 ## Notes:
 
