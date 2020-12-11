@@ -8,12 +8,12 @@ Project hosted at Heroku: https://incidentresponsedemo.herokuapp.com/
 
 ## Steps for Demo:
 
-1) Go to https://incidentresponsedemo.herokuapp.com/
-2) Download the file located here to be used for the prediction for this demo.
+1) Download the file named 'incident_event_log_predict.csv' which will be used for the prediction for this demo.
 Note: Because of the specific format that the dataset has been provided in, the prediction dataset also needs to be in the same format. I have split 20% of the original dataset to be used for the prediction demo here(Which was not used for training the model).
-3) Click on 'Browse' and navigate to the folder location where you downloaded the file to and select the file.
+2) Go to https://incidentresponsedemo.herokuapp.com/
+3) Click on 'Browse' and navigate to the folder location where you downloaded the file 'incident_event_log_predict.csv' to and select the file.
 4) Click on 'predict'.
-5) You will be provided a download window to download the prediction file named 'prediction' which you can save to your system.
+5) After a few seconds, you will be prompted to download the file named 'prediction' which you can save to your system.
 6) If you open the downloaded file, you can see the prediction for the time to resolve the incident under the 'Resolution_Time' column. The prediction categories are as follows:
 
 Within 6 hours
