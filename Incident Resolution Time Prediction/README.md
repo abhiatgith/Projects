@@ -9,7 +9,7 @@ Project hosted at Heroku: https://incidentresponsedemo.herokuapp.com/
 ## Steps for Demo:
 
 1) Download the file named 'incident_event_log_predict.csv' which will be used for the prediction for this demo.
-Note: Because of the specific format that the dataset has been provided in, the prediction dataset also needs to be in the same format. I have split 20% of the original dataset to be used for the prediction demo here(Which was not used for training the model).
+Note: Because of the specific format that the training dataset has been provided in (The dataset used for training the model is 'incident_event_log_train.csv' which is present in the project directory. For further details on the problem statement and dataset, please refer to the document - 'Incident_response_problem_statement.txt'), the prediction dataset also needs to be in the same format. I have split 20% of the original dataset to be used for the prediction demo here(Which was not used for training the model).
 2) Go to https://incidentresponsedemo.herokuapp.com/
 3) Click on 'Browse' and navigate to the folder location where you downloaded the file 'incident_event_log_predict.csv' to and select the file.
 4) Click on 'predict'.
