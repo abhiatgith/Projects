@@ -22,7 +22,7 @@ kiwisolver==1.2.0
 lightgbm==2.3.1
 MarkupSafe==1.1.1
 matplotlib==3.2.2
-numpy==1.18.4
+numpy==1.22.0
 pandas==1.0.3
 parso==0.7.0
 patsy==0.5.1
